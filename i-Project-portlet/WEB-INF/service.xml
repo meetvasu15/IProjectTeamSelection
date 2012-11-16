@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.iproject.slayer">
+	<author>Shruthi</author>
+	<namespace>project</namespace>
+
+	<entity name="Projectdetail" local-service="true" remote-service="false">
+                <!-- PK fields -->
+                <column name="projectID" type="long" primary="true"  />
+
+                <!-- UI fields -->
+                <column name="projectTitle" type="String" />
+                <column name="projectdescription" type="String" />
+                <column name="contact" type="String" />
+
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+        </entity>
+
+</service-builder>
