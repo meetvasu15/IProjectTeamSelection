@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.test.slayer.model.LMSBook">
+		<field name="bookId" type="long" />
+		<field name="asuid" type="String" />
+		<field name="email" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>
