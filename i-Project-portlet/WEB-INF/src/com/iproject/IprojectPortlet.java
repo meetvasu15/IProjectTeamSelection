@@ -13,6 +13,7 @@ import com.iproject.slayer.model.Projectdetail;
 import com.iproject.slayer.model.impl.ProjectdetailImpl;
 import com.iproject.slayer.service.ProjectdetailLocalServiceUtil;
 import com.liferay.counter.service.CounterLocalServiceUtil;
+import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ParamUtil;
 import com.liferay.util.bridges.mvc.MVCPortlet;
@@ -20,44 +21,75 @@ import com.liferay.util.bridges.mvc.MVCPortlet;
 /**
  * Portlet implementation class IprojectPortlet
  */
-public class IprojectPortlet extends MVCPortlet {
+public class IprojectPortlet extends MVCPortlet 
+{
 	
-	public void updateproject(ActionRequest actionRequest,
-			ActionResponse actionResponse)
-			throws IOException, PortletException {
+	public void updateproject(ActionRequest actionRequest,ActionResponse actionResponse)
+			throws IOException, PortletException 
+	{
+		
 			String projectTitle = ParamUtil.getString(actionRequest, "projectTitle");
 			String projectdescription = ParamUtil.getString(actionRequest, "projectdescription");
 			String contact = ParamUtil.getString(actionRequest, "contact");
-			System.out.println("Your inputs ==> " + projectTitle + ", " + projectdescription + "," + contact);
+			String requiredskill = ParamUtil.getString(actionRequest, "projectrequiredskill");
+			System.out.println("Your inputs ==> " + projectTitle + ", " + projectdescription + "," + requiredskill+ "," + contact);
 			
 			Projectdetail project = new ProjectdetailImpl();
 			// set primary key
 			long projectID = 0L;
-			try {
+			try 
+			{
 				projectID =
-			CounterLocalServiceUtil.increment(
-			this.getClass().getName());
-			} catch (SystemException e) {
-			e.printStackTrace();
+					CounterLocalServiceUtil.increment(
+					this.getClass().getName());
+			}
+			catch (SystemException e) 
+			{
+				e.printStackTrace();
 			}
 			project.setProjectID(projectID);
 			// set UI fields
 			project.setProjectTitle(projectTitle);
 			project.setProjectdescription(projectdescription);
+			project.setProjectrequiredskill(requiredskill);
 			project.setContact(contact);
 			// set audit field(s)
 			project.setDateAdded(new Date());
 			
 			// insert the book using persistence api
-			try {
+			try 
+			{
 				ProjectdetailLocalServiceUtil.addProjectdetail(project);
-			} catch (SystemException e) {
-			e.printStackTrace();
 			}
-			
-			
+			catch (SystemException e) 
+			{
+				e.printStackTrace();
+			}
+	}
+	
+	public void deleteProject(ActionRequest actionRequest,
+            ActionResponse actionResponse) throws IOException, PortletException 
+    {
 
-			}
+    long projectId = ParamUtil.getLong(actionRequest, "projectID");
+   
+    if (projectId > 0L) {
+            try {
+            	ProjectdetailLocalServiceUtil.deleteProjectdetail(projectId);
+            } catch (PortalException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            } catch (SystemException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+            }
+    }
+   
+    // gracefully redirecting to the default portlet view
+    String redirectURL = ParamUtil.getString(actionRequest, "redirectURL");
+    actionResponse.sendRedirect(redirectURL);
+}
+
  
 
 }

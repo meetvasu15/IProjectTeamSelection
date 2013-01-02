@@ -7,7 +7,7 @@
 <%@page import="javax.portlet.PortletURL"%>
 <%@page import="javax.portlet.ActionRequest"%>
 
-<%@page import="com.iproject.slayer.model.Projectdetail" %>
-<%@page import="com.iproject.slayer.service.ProjectdetailLocalServiceUtil" %>
+<%@page import="com.iproject.slayer.model.Projectdetail" %>;
+<%@page import="com.iproject.slayer.service.ProjectdetailLocalServiceUtil" %>;
 
 <portlet:defineObjects />
