@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.asu.iproject.student.skillset.model.impl.SkillsetModelImpl">
+		<attributes>
+			<id name="studentID" />
+			<basic name="Project_Management" />
+			<basic name="Technical_Writing" />
+			<basic name="Oral_Presentation" />
+			<basic name="Thermo_Fluids" />
+			<basic name="Data_Analysis" />
+			<basic name="Leadership" />
+			<basic name="Automation" />
+			<basic name="Mechanical_Design" />
+			<basic name="Fabrication_Welding" />
+			<basic name="Machining_CNC" />
+			<basic name="Heat_Transfer" />
+			<basic name="Electronics" />
+			<basic name="Microcontrollers" />
+			<basic name="GUI_and_Programming" />
+			<basic name="LabView" />
+			<basic name="Embedded_Systems" />
+			<basic name="CADD" />
+			<basic name="FEA" />
+			<basic name="Civil_Engineering" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.asu.iproject.student.skillset.model.impl.SkillsetImpl" name="Skillset">
+		<table name="Skillset_Skillset" />
+		<attributes />
+	</entity>
+</entity-mappings>
