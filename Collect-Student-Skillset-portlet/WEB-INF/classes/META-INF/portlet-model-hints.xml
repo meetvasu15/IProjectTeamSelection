@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.asu.iproject.student.skillset.model.Skillset">
+		<field name="studentID" type="long" />
+		<field name="asuid" type="String" />
+		<field name="email" type="String" />
+		<field name="skill1" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>
