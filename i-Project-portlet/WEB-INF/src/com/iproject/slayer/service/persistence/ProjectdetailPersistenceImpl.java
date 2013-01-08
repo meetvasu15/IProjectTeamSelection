@@ -311,6 +311,7 @@ public class ProjectdetailPersistenceImpl extends BasePersistenceImpl<Projectdet
 		projectdetailImpl.setProjectrequiredskill(projectdetail.getProjectrequiredskill());
 		projectdetailImpl.setContact(projectdetail.getContact());
 		projectdetailImpl.setDateAdded(projectdetail.getDateAdded());
+		projectdetailImpl.setDateModified(projectdetail.getDateModified());
 
 		return projectdetailImpl;
 	}

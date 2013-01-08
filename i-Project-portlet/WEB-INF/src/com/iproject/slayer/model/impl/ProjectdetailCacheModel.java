@@ -35,7 +35,7 @@ public class ProjectdetailCacheModel implements CacheModel<Projectdetail>,
 	Serializable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(13);
+		StringBundler sb = new StringBundler(15);
 
 		sb.append("{projectID=");
 		sb.append(projectID);
@@ -49,6 +49,8 @@ public class ProjectdetailCacheModel implements CacheModel<Projectdetail>,
 		sb.append(contact);
 		sb.append(", dateAdded=");
 		sb.append(dateAdded);
+		sb.append(", dateModified=");
+		sb.append(dateModified);
 		sb.append("}");
 
 		return sb.toString();
@@ -94,6 +96,13 @@ public class ProjectdetailCacheModel implements CacheModel<Projectdetail>,
 			projectdetailImpl.setDateAdded(new Date(dateAdded));
 		}
 
+		if (dateModified == Long.MIN_VALUE) {
+			projectdetailImpl.setDateModified(null);
+		}
+		else {
+			projectdetailImpl.setDateModified(new Date(dateModified));
+		}
+
 		projectdetailImpl.resetOriginalValues();
 
 		return projectdetailImpl;
@@ -105,4 +114,5 @@ public class ProjectdetailCacheModel implements CacheModel<Projectdetail>,
 	public String projectrequiredskill;
 	public String contact;
 	public long dateAdded;
+	public long dateModified;
 }

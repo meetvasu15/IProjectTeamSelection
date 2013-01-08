@@ -13,5 +13,6 @@
 		<property name="projectrequiredskill" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="contact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
 		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
 	</class>
 </hibernate-mapping>

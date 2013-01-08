@@ -52,6 +52,7 @@ public class ProjectdetailWrapper implements Projectdetail,
 		attributes.put("projectrequiredskill", getProjectrequiredskill());
 		attributes.put("contact", getContact());
 		attributes.put("dateAdded", getDateAdded());
+		attributes.put("dateModified", getDateModified());
 
 		return attributes;
 	}
@@ -92,6 +93,12 @@ public class ProjectdetailWrapper implements Projectdetail,
 
 		if (dateAdded != null) {
 			setDateAdded(dateAdded);
+		}
+
+		Date dateModified = (Date)attributes.get("dateModified");
+
+		if (dateModified != null) {
+			setDateModified(dateModified);
 		}
 	}
 
@@ -219,6 +226,24 @@ public class ProjectdetailWrapper implements Projectdetail,
 	*/
 	public void setDateAdded(java.util.Date dateAdded) {
 		_projectdetail.setDateAdded(dateAdded);
+	}
+
+	/**
+	* Returns the date modified of this projectdetail.
+	*
+	* @return the date modified of this projectdetail
+	*/
+	public java.util.Date getDateModified() {
+		return _projectdetail.getDateModified();
+	}
+
+	/**
+	* Sets the date modified of this projectdetail.
+	*
+	* @param dateModified the date modified of this projectdetail
+	*/
+	public void setDateModified(java.util.Date dateModified) {
+		_projectdetail.setDateModified(dateModified);
 	}
 
 	public boolean isNew() {

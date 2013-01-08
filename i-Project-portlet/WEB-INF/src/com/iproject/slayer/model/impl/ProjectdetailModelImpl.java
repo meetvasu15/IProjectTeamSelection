@@ -64,9 +64,10 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 			{ "projectdescription", Types.VARCHAR },
 			{ "projectrequiredskill", Types.VARCHAR },
 			{ "contact", Types.VARCHAR },
-			{ "dateAdded", Types.TIMESTAMP }
+			{ "dateAdded", Types.TIMESTAMP },
+			{ "dateModified", Types.TIMESTAMP }
 		};
-	public static final String TABLE_SQL_CREATE = "create table project_Projectdetail (projectID LONG not null primary key,projectTitle VARCHAR(75) null,projectdescription VARCHAR(75) null,projectrequiredskill VARCHAR(75) null,contact VARCHAR(75) null,dateAdded DATE null)";
+	public static final String TABLE_SQL_CREATE = "create table project_Projectdetail (projectID LONG not null primary key,projectTitle VARCHAR(75) null,projectdescription VARCHAR(75) null,projectrequiredskill VARCHAR(75) null,contact VARCHAR(75) null,dateAdded DATE null,dateModified DATE null)";
 	public static final String TABLE_SQL_DROP = "drop table project_Projectdetail";
 	public static final String DATA_SOURCE = "liferayDataSource";
 	public static final String SESSION_FACTORY = "liferaySessionFactory";
@@ -118,6 +119,7 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 		attributes.put("projectrequiredskill", getProjectrequiredskill());
 		attributes.put("contact", getContact());
 		attributes.put("dateAdded", getDateAdded());
+		attributes.put("dateModified", getDateModified());
 
 		return attributes;
 	}
@@ -159,6 +161,12 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 
 		if (dateAdded != null) {
 			setDateAdded(dateAdded);
+		}
+
+		Date dateModified = (Date)attributes.get("dateModified");
+
+		if (dateModified != null) {
+			setDateModified(dateModified);
 		}
 	}
 
@@ -230,6 +238,14 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 		_dateAdded = dateAdded;
 	}
 
+	public Date getDateModified() {
+		return _dateModified;
+	}
+
+	public void setDateModified(Date dateModified) {
+		_dateModified = dateModified;
+	}
+
 	@Override
 	public ExpandoBridge getExpandoBridge() {
 		return ExpandoBridgeFactoryUtil.getExpandoBridge(0,
@@ -264,6 +280,7 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 		projectdetailImpl.setProjectrequiredskill(getProjectrequiredskill());
 		projectdetailImpl.setContact(getContact());
 		projectdetailImpl.setDateAdded(getDateAdded());
+		projectdetailImpl.setDateModified(getDateModified());
 
 		projectdetailImpl.resetOriginalValues();
 
@@ -366,12 +383,21 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 			projectdetailCacheModel.dateAdded = Long.MIN_VALUE;
 		}
 
+		Date dateModified = getDateModified();
+
+		if (dateModified != null) {
+			projectdetailCacheModel.dateModified = dateModified.getTime();
+		}
+		else {
+			projectdetailCacheModel.dateModified = Long.MIN_VALUE;
+		}
+
 		return projectdetailCacheModel;
 	}
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(13);
+		StringBundler sb = new StringBundler(15);
 
 		sb.append("{projectID=");
 		sb.append(getProjectID());
@@ -385,13 +411,15 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 		sb.append(getContact());
 		sb.append(", dateAdded=");
 		sb.append(getDateAdded());
+		sb.append(", dateModified=");
+		sb.append(getDateModified());
 		sb.append("}");
 
 		return sb.toString();
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(22);
+		StringBundler sb = new StringBundler(25);
 
 		sb.append("<model><model-name>");
 		sb.append("com.iproject.slayer.model.Projectdetail");
@@ -421,6 +449,10 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 			"<column><column-name>dateAdded</column-name><column-value><![CDATA[");
 		sb.append(getDateAdded());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>dateModified</column-name><column-value><![CDATA[");
+		sb.append(getDateModified());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -437,5 +469,6 @@ public class ProjectdetailModelImpl extends BaseModelImpl<Projectdetail>
 	private String _projectrequiredskill;
 	private String _contact;
 	private Date _dateAdded;
+	private Date _dateModified;
 	private Projectdetail _escapedModelProxy;
 }

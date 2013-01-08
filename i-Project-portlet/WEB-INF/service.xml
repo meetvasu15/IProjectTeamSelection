@@ -16,6 +16,7 @@
 
                 <!-- Audit fields -->
                 <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
         </entity>
 
 </service-builder>

@@ -36,6 +36,7 @@ public class ProjectdetailSoap implements Serializable {
 		soapModel.setProjectrequiredskill(model.getProjectrequiredskill());
 		soapModel.setContact(model.getContact());
 		soapModel.setDateAdded(model.getDateAdded());
+		soapModel.setDateModified(model.getDateModified());
 
 		return soapModel;
 	}
@@ -136,10 +137,19 @@ public class ProjectdetailSoap implements Serializable {
 		_dateAdded = dateAdded;
 	}
 
+	public Date getDateModified() {
+		return _dateModified;
+	}
+
+	public void setDateModified(Date dateModified) {
+		_dateModified = dateModified;
+	}
+
 	private long _projectID;
 	private String _projectTitle;
 	private String _projectdescription;
 	private String _projectrequiredskill;
 	private String _contact;
 	private Date _dateAdded;
+	private Date _dateModified;
 }

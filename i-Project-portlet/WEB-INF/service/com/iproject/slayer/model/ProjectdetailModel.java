@@ -147,6 +147,20 @@ public interface ProjectdetailModel extends BaseModel<Projectdetail> {
 	 */
 	public void setDateAdded(Date dateAdded);
 
+	/**
+	 * Returns the date modified of this projectdetail.
+	 *
+	 * @return the date modified of this projectdetail
+	 */
+	public Date getDateModified();
+
+	/**
+	 * Sets the date modified of this projectdetail.
+	 *
+	 * @param dateModified the date modified of this projectdetail
+	 */
+	public void setDateModified(Date dateModified);
+
 	public boolean isNew();
 
 	public void setNew(boolean n);

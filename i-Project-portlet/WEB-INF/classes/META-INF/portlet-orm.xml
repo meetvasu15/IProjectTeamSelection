@@ -17,6 +17,9 @@
 			<basic name="dateAdded">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
 			<transient name="modelAttributes" />
 			<transient name="primaryKey" />
 			<transient name="primaryKeyObj" />

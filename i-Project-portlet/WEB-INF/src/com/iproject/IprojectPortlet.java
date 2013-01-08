@@ -28,7 +28,7 @@ public class IprojectPortlet extends MVCPortlet
 			throws IOException, PortletException 
 	{
 		
-			String projectTitle = ParamUtil.getString(actionRequest, "projectTitle");
+			/*String projectTitle = ParamUtil.getString(actionRequest, "projectTitle");
 			String projectdescription = ParamUtil.getString(actionRequest, "projectdescription");
 			String contact = ParamUtil.getString(actionRequest, "contact");
 			String requiredskill = ParamUtil.getString(actionRequest, "projectrequiredskill");
@@ -64,7 +64,85 @@ public class IprojectPortlet extends MVCPortlet
 			catch (SystemException e) 
 			{
 				e.printStackTrace();
+			}*/
+		
+		String projectTitle = ParamUtil.getString(actionRequest, "projectTitle");
+		String projectdescription = ParamUtil.getString(actionRequest, "projectdescription");
+		String contact = ParamUtil.getString(actionRequest, "contact");
+		String requiredskill = ParamUtil.getString(actionRequest, "projectrequiredskill");
+		
+		long projectId = ParamUtil.getLong(actionRequest, "projectId");
+		
+		Projectdetail project = null;
+		if (projectId > 0L) {
+			try {
+				project = ProjectdetailLocalServiceUtil.getProjectdetail(projectId);
+			} catch (PortalException e) {
+				e.printStackTrace();
+			} catch (SystemException e) {
+				e.printStackTrace();
 			}
+		} else {
+			project = new ProjectdetailImpl();
+		}
+			
+				
+		// set UI fields		
+		project.setProjectTitle(projectTitle);
+		project.setProjectdescription(projectdescription);
+		project.setProjectrequiredskill(requiredskill);
+		project.setContact(contact);
+		
+		if (projectId > 0L) {
+			modifyproject(project);
+		} else {
+			addproject(project);
+		}
+		
+		// gracefully redirecting to the default portlet view
+		String redirectURL = ParamUtil.getString(actionRequest, "redirectURL");
+		actionResponse.sendRedirect(redirectURL);
+	}
+	
+	private void addproject(Projectdetail project) 
+	{
+		// set primary key
+		long projectID = 0L;
+		try 
+		{
+			projectID =
+				CounterLocalServiceUtil.increment(
+				this.getClass().getName());
+		}
+		catch (SystemException e) 
+		{
+			e.printStackTrace();
+		}
+		project.setProjectID(projectID);
+		// set audit field(s)
+		project.setDateAdded(new Date());
+		project.setDateModified(new Date());
+		
+		// insert the project using persistence api
+		try 
+		{
+			ProjectdetailLocalServiceUtil.addProjectdetail(project);
+		} catch (SystemException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	private void modifyproject(Projectdetail project) {
+		
+		project.setDateModified(new Date());
+		
+		try {
+			ProjectdetailLocalServiceUtil.updateProjectdetail(project);
+		} catch (SystemException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void deleteProject(ActionRequest actionRequest,
@@ -89,6 +167,18 @@ public class IprojectPortlet extends MVCPortlet
     String redirectURL = ParamUtil.getString(actionRequest, "redirectURL");
     actionResponse.sendRedirect(redirectURL);
 }
+	
+	
+	
+	/*public void uploadFile(ActionRequest actionRequest,
+            ActionResponse actionResponse) throws IOException, PortletException 
+    {
+		
+		
+		
+		
+    }
+    }*/
 
  
 

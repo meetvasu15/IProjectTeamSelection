@@ -72,6 +72,7 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 		attributes.put("projectrequiredskill", getProjectrequiredskill());
 		attributes.put("contact", getContact());
 		attributes.put("dateAdded", getDateAdded());
+		attributes.put("dateModified", getDateModified());
 
 		return attributes;
 	}
@@ -113,6 +114,12 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 
 		if (dateAdded != null) {
 			setDateAdded(dateAdded);
+		}
+
+		Date dateModified = (Date)attributes.get("dateModified");
+
+		if (dateModified != null) {
+			setDateModified(dateModified);
 		}
 	}
 
@@ -164,6 +171,14 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 		_dateAdded = dateAdded;
 	}
 
+	public Date getDateModified() {
+		return _dateModified;
+	}
+
+	public void setDateModified(Date dateModified) {
+		_dateModified = dateModified;
+	}
+
 	public BaseModel<?> getProjectdetailRemoteModel() {
 		return _projectdetailRemoteModel;
 	}
@@ -198,6 +213,7 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 		clone.setProjectrequiredskill(getProjectrequiredskill());
 		clone.setContact(getContact());
 		clone.setDateAdded(getDateAdded());
+		clone.setDateModified(getDateModified());
 
 		return clone;
 	}
@@ -248,7 +264,7 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(13);
+		StringBundler sb = new StringBundler(15);
 
 		sb.append("{projectID=");
 		sb.append(getProjectID());
@@ -262,13 +278,15 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 		sb.append(getContact());
 		sb.append(", dateAdded=");
 		sb.append(getDateAdded());
+		sb.append(", dateModified=");
+		sb.append(getDateModified());
 		sb.append("}");
 
 		return sb.toString();
 	}
 
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(22);
+		StringBundler sb = new StringBundler(25);
 
 		sb.append("<model><model-name>");
 		sb.append("com.iproject.slayer.model.Projectdetail");
@@ -298,6 +316,10 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 			"<column><column-name>dateAdded</column-name><column-value><![CDATA[");
 		sb.append(getDateAdded());
 		sb.append("]]></column-value></column>");
+		sb.append(
+			"<column><column-name>dateModified</column-name><column-value><![CDATA[");
+		sb.append(getDateModified());
+		sb.append("]]></column-value></column>");
 
 		sb.append("</model>");
 
@@ -310,5 +332,6 @@ public class ProjectdetailClp extends BaseModelImpl<Projectdetail>
 	private String _projectrequiredskill;
 	private String _contact;
 	private Date _dateAdded;
+	private Date _dateModified;
 	private BaseModel<?> _projectdetailRemoteModel;
 }

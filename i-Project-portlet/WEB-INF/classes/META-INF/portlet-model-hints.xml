@@ -8,5 +8,6 @@
 		<field name="projectrequiredskill" type="String" />
 		<field name="contact" type="String" />
 		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
 	</model>
 </model-hints>
