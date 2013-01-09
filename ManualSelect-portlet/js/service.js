@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.manualSelect", "com.asu.poly.teams.manualSelect.slayer.service", "ManualSelect-portlet");

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.FacultyLocalService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.FacultyLocalServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.FacultyService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.FacultyServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.persistence.FacultyPersistence" class="com.asu.poly.teams.randomCreate.slayer.service.persistence.FacultyPersistenceImpl" parent="basePersistence" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.ProjectdetailLocalService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.ProjectdetailLocalServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.ProjectdetailService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.ProjectdetailServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.persistence.ProjectdetailPersistence" class="com.asu.poly.teams.randomCreate.slayer.service.persistence.ProjectdetailPersistenceImpl" parent="basePersistence" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.SkillsetLocalService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.SkillsetLocalServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.SkillsetService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.SkillsetServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.persistence.SkillsetPersistence" class="com.asu.poly.teams.randomCreate.slayer.service.persistence.SkillsetPersistenceImpl" parent="basePersistence" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.StudentLocalService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.StudentLocalServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.StudentService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.StudentServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.persistence.StudentPersistence" class="com.asu.poly.teams.randomCreate.slayer.service.persistence.StudentPersistenceImpl" parent="basePersistence" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.TeamLocalService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.TeamLocalServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.TeamService" class="com.asu.poly.teams.randomCreate.slayer.service.impl.TeamServiceImpl" />
+	<bean id="com.asu.poly.teams.randomCreate.slayer.service.persistence.TeamPersistence" class="com.asu.poly.teams.randomCreate.slayer.service.persistence.TeamPersistenceImpl" parent="basePersistence" />
+</beans>

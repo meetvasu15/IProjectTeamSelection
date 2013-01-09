@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.randomCreate", "com.asu.poly.teams.randomCreate.slayer.service", "RandomCreation-portlet");

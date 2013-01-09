@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.asu.poly.teams.randomCreate.slayer">
+	<author>asingh64</author>
+	<namespace>randomCreate</namespace>
+	<entity name="Team" local-service="true" remote-service="true" table="TeamDetails">
+		<!-- PK fields -->
+		<column name="teamID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="projectTitle" type="String"></column>
+		<column name="student0" type="String"></column>
+		<column name="student1" type="String"></column>
+		<column name="student2" type="String"></column>
+		<column name="student3" type="String"></column>
+		<column name="student4" type="String"></column>
+		<column name="student5" type="String"></column>
+		<column name="student6" type="String"></column>
+		<column name="student7" type="String"></column>
+		<column name="student8" type="String"></column>
+		<column name="student9" type="String"></column>
+		<column name="faculty0" type="String"></column>
+		<column name="faculty1" type="String"></column>
+		<column name="faculty2" type="String"></column>
+		<column name="faculty3" type="String"></column>
+		<column name="faculty4" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+	</entity>
+	<entity name="Faculty" local-service="true" remote-service="true" table="faculty">
+		<!-- PK fields -->
+		<column name="facultyID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="asuid" type="String"></column>
+		<column name="facultyName" type="String"></column>
+		<column name="facultyDept" type="String"></column>
+		<column name="contact" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+	</entity>
+	<entity name="Student" local-service="true" remote-service="true" table="student">
+		<!-- PK fields -->
+		<column name="studentID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="asuid" type="String"></column>
+		<column name="studentName" type="String"></column>
+		<column name="level" type="String"></column>
+		<column name="course" type="String"></column>
+		<column name="gpa" type="String"></column>
+		<column name="sex" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+	</entity>
+	<entity name="Projectdetail" local-service="true" remote-service="true" table="project_projectdetail">
+		<!-- PK fields -->
+		<column name="projectID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="projectTitle" type="String"></column>
+		<column name="projectdescription" type="String"></column>
+		<column name="projectrequiredskill" type="String"></column>
+		<column name="contact" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+	</entity>
+	<entity name="Skillset" local-service="true" remote-service="true" table="student_skillset">
+		<!-- PK fields -->
+		<column name="studentID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="asuid" type="String"></column>
+		<column name="Project_Management" type="String"></column>
+		<column name="Technical_Writing" type="String"></column>
+		<column name="Oral_Presentation" type="String"></column>
+		<column name="Thermo_Fluids" type="String"></column>
+		<column name="Data_Analysis" type="String"></column>
+		<column name="Leadership" type="String"></column>
+		<column name="Automation" type="String"></column>
+		<column name="Mechanical_Design" type="String"></column>
+		<column name="Fabrication_Welding" type="String"></column>
+		<column name="Machining_CNC" type="String"></column>
+		<column name="Heat_Transfer" type="String"></column>
+		<column name="Electronics" type="String"></column>
+		<column name="Microcontrollers" type="String"></column>
+		<column name="GUI_and_Programming" type="String"></column>
+		<column name="LabView" type="String"></column>
+		<column name="Embedded_Systems" type="String"></column>
+		<column name="CADD" type="String"></column>
+		<column name="FEA" type="String"></column>
+		<column name="Civil_Engineering" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+	</entity>
+</service-builder>

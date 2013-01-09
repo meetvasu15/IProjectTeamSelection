@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.asu.poly.teams.randomCreate.slayer.model.impl.FacultyModelImpl">
+		<attributes>
+			<id name="facultyID" />
+			<basic name="asuid" />
+			<basic name="facultyName" />
+			<basic name="facultyDept" />
+			<basic name="contact" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.asu.poly.teams.randomCreate.slayer.model.impl.ProjectdetailModelImpl">
+		<attributes>
+			<id name="projectID" />
+			<basic name="projectTitle" />
+			<basic name="projectdescription" />
+			<basic name="projectrequiredskill" />
+			<basic name="contact" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.asu.poly.teams.randomCreate.slayer.model.impl.SkillsetModelImpl">
+		<attributes>
+			<id name="studentID" />
+			<basic name="asuid" />
+			<basic name="Project_Management" />
+			<basic name="Technical_Writing" />
+			<basic name="Oral_Presentation" />
+			<basic name="Thermo_Fluids" />
+			<basic name="Data_Analysis" />
+			<basic name="Leadership" />
+			<basic name="Automation" />
+			<basic name="Mechanical_Design" />
+			<basic name="Fabrication_Welding" />
+			<basic name="Machining_CNC" />
+			<basic name="Heat_Transfer" />
+			<basic name="Electronics" />
+			<basic name="Microcontrollers" />
+			<basic name="GUI_and_Programming" />
+			<basic name="LabView" />
+			<basic name="Embedded_Systems" />
+			<basic name="CADD" />
+			<basic name="FEA" />
+			<basic name="Civil_Engineering" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.asu.poly.teams.randomCreate.slayer.model.impl.StudentModelImpl">
+		<attributes>
+			<id name="studentID" />
+			<basic name="asuid" />
+			<basic name="studentName" />
+			<basic name="level" />
+			<basic name="course" />
+			<basic name="gpa" />
+			<basic name="sex" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.asu.poly.teams.randomCreate.slayer.model.impl.TeamModelImpl">
+		<attributes>
+			<id name="teamID" />
+			<basic name="projectTitle" />
+			<basic name="student0" />
+			<basic name="student1" />
+			<basic name="student2" />
+			<basic name="student3" />
+			<basic name="student4" />
+			<basic name="student5" />
+			<basic name="student6" />
+			<basic name="student7" />
+			<basic name="student8" />
+			<basic name="student9" />
+			<basic name="faculty0" />
+			<basic name="faculty1" />
+			<basic name="faculty2" />
+			<basic name="faculty3" />
+			<basic name="faculty4" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.asu.poly.teams.randomCreate.slayer.model.impl.FacultyImpl" name="Faculty">
+		<table name="faculty" />
+		<attributes />
+	</entity>
+	<entity class="com.asu.poly.teams.randomCreate.slayer.model.impl.ProjectdetailImpl" name="Projectdetail">
+		<table name="project_projectdetail" />
+		<attributes />
+	</entity>
+	<entity class="com.asu.poly.teams.randomCreate.slayer.model.impl.SkillsetImpl" name="Skillset">
+		<table name="student_skillset" />
+		<attributes />
+	</entity>
+	<entity class="com.asu.poly.teams.randomCreate.slayer.model.impl.StudentImpl" name="Student">
+		<table name="student" />
+		<attributes />
+	</entity>
+	<entity class="com.asu.poly.teams.randomCreate.slayer.model.impl.TeamImpl" name="Team">
+		<table name="TeamDetails" />
+		<attributes />
+	</entity>
+</entity-mappings>
