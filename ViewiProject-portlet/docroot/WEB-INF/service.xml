@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.viewiProject.servicelayer">
+	<author>Shruthi</author>
+	<namespace>viewiProject</namespace>
+
+	<entity name="viewprj" local-service="true" remote-service="true" table="project_projectdetail">
+
+		<!-- PK fields -->
+
+		<column name="projectId" type="long" primary="true" />
+
+		<!-- UI fields -->
+        <column name="projectTitle" type="String" />
+        <column name="projectdescription" type="String" />
+        <column name="projectrequiredskill" type="String" />
+        <column name="contact" type="String" />
+
+        <!-- Audit fields -->
+        <column name="dateAdded" type="Date" />
+
+
+	</entity>
+</service-builder>

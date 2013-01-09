@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.viewiProject", "com.viewiProject.servicelayer.service", "ViewiProject-portlet");

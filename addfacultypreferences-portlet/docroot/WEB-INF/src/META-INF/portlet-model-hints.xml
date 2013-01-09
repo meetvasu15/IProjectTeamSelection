@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.addfacultypreferences.slayer.model.LNSBook">
+		<field name="nameId" type="long" />
+		<field name="name" type="String" />
+		<field name="email" type="String" />
+		<field name="number" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>
