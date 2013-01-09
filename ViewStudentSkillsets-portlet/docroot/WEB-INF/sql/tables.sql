@@ -1,0 +1,23 @@
+create table skillset_skillset (
+	studentID LONG not null primary key,
+	Project_Management VARCHAR(75) null,
+	Technical_Writing VARCHAR(75) null,
+	Oral_Presentation VARCHAR(75) null,
+	Thermo_Fluids VARCHAR(75) null,
+	Data_Analysis VARCHAR(75) null,
+	Leadership VARCHAR(75) null,
+	Automation VARCHAR(75) null,
+	Mechanical_Design VARCHAR(75) null,
+	Fabrication_Welding VARCHAR(75) null,
+	Machining_CNC VARCHAR(75) null,
+	Heat_Transfer VARCHAR(75) null,
+	Electronics VARCHAR(75) null,
+	Microcontrollers VARCHAR(75) null,
+	GUI_and_Programming VARCHAR(75) null,
+	LabView VARCHAR(75) null,
+	Embedded_Systems VARCHAR(75) null,
+	CADD VARCHAR(75) null,
+	FEA VARCHAR(75) null,
+	Civil_Engineering VARCHAR(75) null,
+	dateAdded DATE null
+);

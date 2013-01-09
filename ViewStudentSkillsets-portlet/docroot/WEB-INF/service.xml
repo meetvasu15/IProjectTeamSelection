@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.test"
+	auto-namespace-tables="false">
+	<author>zhengyang</author>
+	<namespace>Skillset</namespace>
+
+	<entity name="Skillset" local-service="true" remote-service="true" table="skillset_skillset">
+		<!-- PK fields -->
+		<column name="studentID" type="long" primary="true" />
+
+		<!-- UI fields -->
+		<column name="Project_Management" type="String" />
+		<column name="Technical_Writing" type="String" />
+		<column name="Oral_Presentation" type="String" />
+		<column name="Thermo_Fluids" type="String" />
+		<column name="Data_Analysis" type="String" />
+		<column name="Leadership" type="String" />
+		<column name="Automation" type="String" />
+		<column name="Mechanical_Design" type="String" />
+		<column name="Fabrication_Welding" type="String" />
+		<column name="Machining_CNC" type="String" />
+		<column name="Heat_Transfer" type="String" />
+		<column name="Electronics" type="String" />
+		<column name="Microcontrollers" type="String" />
+		<column name="GUI_and_Programming" type="String" />
+		<column name="LabView" type="String" />
+		<column name="Embedded_Systems" type="String" />
+		<column name="CADD" type="String" />
+		<column name="FEA" type="String" />
+		<column name="Civil_Engineering" type="String" />
+
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date" />
+		
+	</entity>
+
+</service-builder>

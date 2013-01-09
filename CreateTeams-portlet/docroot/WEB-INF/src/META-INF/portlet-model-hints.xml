@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.CreateTeams.slayer.model.CTS">
+		<field name="TeamId" type="long" />
+		<field name="TeamName" type="String" />
+		<field name="TeamMembers" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>

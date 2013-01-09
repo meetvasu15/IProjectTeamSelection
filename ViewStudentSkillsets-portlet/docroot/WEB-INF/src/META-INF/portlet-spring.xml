@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.test.service.SkillsetLocalService" class="com.test.service.impl.SkillsetLocalServiceImpl" />
+	<bean id="com.test.service.SkillsetService" class="com.test.service.impl.SkillsetServiceImpl" />
+	<bean id="com.test.service.persistence.SkillsetPersistence" class="com.test.service.persistence.SkillsetPersistenceImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.CreateTeams.slayer.model.CTS" />
+	<class name="com.CreateTeams.slayer.model.impl.CTSImpl" table="CTS_CTS">
+		<cache usage="read-write" />
+		<id name="TeamId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="TeamName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="TeamMembers" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

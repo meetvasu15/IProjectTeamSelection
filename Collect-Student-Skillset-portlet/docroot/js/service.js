@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.Skillset", "com.asu.iproject.student.skillset.service", "Collect-Student-Skillset-portlet");
