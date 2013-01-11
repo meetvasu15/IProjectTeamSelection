@@ -50,37 +50,40 @@ public class RandomCreation extends MVCPortlet {
 				facultyCount = FacultyLocalServiceUtil.getFacultiesCount();
 				faculty = FacultyLocalServiceUtil.getFaculties(0,	facultyCount);
 				String fac= (faculty.get(rand.nextInt(faculty.size()))).getAsuid();
+				StringBuilder stud;
 				team.setFaculty0(fac);
 				for (int i = 0; i<=Integer.parseInt(ctr); i++){
 					int choice = rand.nextInt(students.size());
+					stud = students.get(choice).getAsuid();
 					switch(i){
 					case 0:
-						team.setStudent0((students.get(choice).getAsuid()));
+						team.setStudent0(stud);
 						break;
 					case 1:
-						team.setStudent1((students.get(choice).getAsuid()));
+						team.setStudent1(stud);
 						break;
 					case 2:
-						team.setStudent2((students.get(choice).getAsuid()));
+						team.setStudent2(stud);
 						break;
 					case 3:
-						team.setStudent3((students.get(choice).getAsuid()));
+						team.setStudent3(stud);
 						break;
 					case 4:
-						team.setStudent4((students.get(choice).getAsuid()));
+						team.setStudent4(stud);
 						break;
 					case 5:
-						team.setStudent5(students.get(choice).getAsuid());
+						team.setStudent5(stud);
 						break;
 					case 6:
-						team.setStudent6(students.get(choice).getAsuid());
+						team.setStudent6(stud);
 						break;
 					case 7:
-						team.setStudent7((students.get(choice).getAsuid()));
+						team.setStudent7(stud);
 						break;
 					default:
-						team.setStudent0((students.get(choice).getAsuid()));
+						team.setStudent0(stud);
 						break;
+						students.remove(stud);
 						
 					}
 					
