@@ -22,7 +22,7 @@ public class ManualSelection extends MVCPortlet {
 			ActionResponse actionResponse)
 			throws IOException, PortletException {
 			String project = ParamUtil.getString(actionRequest, "project");
-			String faculty =  ParamUtil.getString(actionRequest, "faulty");
+			//String faculty =  ParamUtil.getString(actionRequest, "faulty");
 			String student1 =  ParamUtil.getString(actionRequest, "student");
 			
 						
@@ -36,7 +36,7 @@ public class ManualSelection extends MVCPortlet {
 				}
 				team.setTeamID(teamID );
 				team.setProjectTitle(project);
-				team.setFaculty1(faculty);
+			//	team.setFaculty1(faculty);
 				// set UI fields
 			team.setStudent0(student1);
 			
