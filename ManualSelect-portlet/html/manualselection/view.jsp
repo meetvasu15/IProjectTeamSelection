@@ -4,8 +4,7 @@
 <%@ page import="com.asu.poly.teams.manualSelect.slayer.service.ProjectdetailLocalServiceUtil" %>
 <%@ page import="com.asu.poly.teams.manualSelect.slayer.model.Student" %>
 <%@ page import="com.asu.poly.teams.manualSelect.slayer.service.StudentLocalServiceUtil" %>
-<%@ page import="com.asu.poly.teams.manualSelect.slayer.model.Faculty" %>
-<%@ page import="com.asu.poly.teams.manualSelect.slayer.service.FacultyLocalServiceUtil" %>
+
 <portlet:defineObjects />
 
 <%
@@ -30,11 +29,7 @@ Select iProject:
 	List<Student> students = StudentLocalServiceUtil.getStudents(0,
 			studentCount);
 %>
-<%
-	int facultyCount = FacultyLocalServiceUtil.getFacultiesCount();
-	List<Faculty> faculties = FacultyLocalServiceUtil.getFaculties(0,
-			facultyCount);
-%>
+
 <form name="<portlet:namespace/>fm" method="POST" action="<%=
 updateTeamsURL.toString() %>">
 <select name="project">
@@ -48,25 +43,7 @@ updateTeamsURL.toString() %>">
 	%>
 </select>
 <br ><br >
-<table width="50%">
-<th><input type="checkbox" disabled="true"></th>
-<th>ASUID</th>
-<th>Name</th>
-<th>Department</th>
-<tr></tr><%
-		for (Faculty fclty : faculties) {
-	%>
-	<tr>
-	<td><input type="checkbox" name="faculty" value="<%= fclty.getAsuid() %>"></td>
-	<td><%= fclty.getAsuid() %></td>
-	<td><%= fclty.getFacultyName() %></td>
-	<td><%= fclty.getFacultyDept()  %></td>
-	</tr>
-	<%
-		}
-	%>
-</table>
-<br ><br >
+
 <table width="80%">
 <tr><td><input type="checkbox" disabled="true"></td>
 <th>ASUID</th>
