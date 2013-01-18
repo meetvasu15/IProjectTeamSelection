@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder
+	package-path="com.asu.poly.iproject.student.preferences">
+	<author>asingh64</author>
+	<namespace>student</namespace>
+
+		<entity name="Projectdetail" local-service="true" remote-service="true" table="iproject_projectdetail">
+                <!-- PK fields -->
+                <column name="projectID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="projectTitle" type="String" />
+               
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+        <entity name="preferences" local-service="true" remote-service="true" >
+                <!-- PK fields -->
+                <column name="studentID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="ASUID" type="String" />
+                <column name="preference1" type="String" />
+                <column name="preference2" type="String" />
+                <column name="preference3" type="String" />
+                <column name="preference4" type="String" />
+                <column name="preference5" type="String" />
+               
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+</service-builder>

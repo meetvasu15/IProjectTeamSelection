@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.asu.poly.iproject.student.preferences.model.impl.preferencesModelImpl">
+		<attributes>
+			<id name="studentID" />
+			<basic name="ASUID" />
+			<basic name="preference1" />
+			<basic name="preference2" />
+			<basic name="preference3" />
+			<basic name="preference4" />
+			<basic name="preference5" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.asu.poly.iproject.student.preferences.model.impl.ProjectdetailModelImpl">
+		<attributes>
+			<id name="projectID" />
+			<basic name="projectTitle" />
+			<basic name="dateAdded">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="dateModified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.asu.poly.iproject.student.preferences.model.impl.preferencesImpl" name="preferences">
+		<table name="student_preferences" />
+		<attributes />
+	</entity>
+	<entity class="com.asu.poly.iproject.student.preferences.model.impl.ProjectdetailImpl" name="Projectdetail">
+		<table name="iproject_projectdetail" />
+		<attributes />
+	</entity>
+</entity-mappings>
