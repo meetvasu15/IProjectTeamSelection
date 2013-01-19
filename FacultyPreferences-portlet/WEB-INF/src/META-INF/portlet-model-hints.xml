@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.asu.poly.iproject.faculty.preferences.model.preferences">
+		<field name="facultyID" type="long" />
+		<field name="ASUID" type="String" />
+		<field name="preference1" type="String" />
+		<field name="preference2" type="String" />
+		<field name="preference3" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+	<model name="com.asu.poly.iproject.faculty.preferences.model.Projectdetail">
+		<field name="projectID" type="long" />
+		<field name="projectTitle" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+</model-hints>

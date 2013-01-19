@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.asu.poly.iproject.faculty.preferences.model.preferences" />
+	<import class="com.asu.poly.iproject.faculty.preferences.model.Projectdetail" />
+	<class name="com.asu.poly.iproject.faculty.preferences.model.impl.preferencesImpl" table="faculty_preferences">
+		<cache usage="read-write" />
+		<id name="facultyID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ASUID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.iproject.faculty.preferences.model.impl.ProjectdetailImpl" table="iproject_projectdetail">
+		<cache usage="read-write" />
+		<id name="projectID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="projectTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

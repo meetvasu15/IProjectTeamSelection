@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+
+<service-builder package-path="com.asu.poly.iproject.student.skills">
+	<author>asingh64</author>
+	<namespace>student</namespace>
+	<entity name="Skillset" local-service="true" remote-service="true">
+		<!-- PK fields -->
+		<column name="studentID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="ASUID" type="String"></column>
+		<column name="Project_Management" type="String"></column>
+		<column name="Technical_Writing" type="String"></column>
+		<column name="Oral_Presentation" type="String"></column>
+		<column name="Thermo_Fluids" type="String"></column>
+		<column name="Data_Analysis" type="String"></column>
+		<column name="Leadership" type="String"></column>
+		<column name="Automation" type="String"></column>
+		<column name="Mechanical_Design" type="String"></column>
+		<column name="Fabrication_Welding" type="String"></column>
+		<column name="Machining_CNC" type="String"></column>
+		<column name="Heat_Transfer" type="String"></column>
+		<column name="Electronics" type="String"></column>
+		<column name="Microcontrollers" type="String"></column>
+		<column name="GUI_and_Programming" type="String"></column>
+		<column name="LabView" type="String"></column>
+		<column name="Embedded_Systems" type="String"></column>
+		<column name="CADD" type="String"></column>
+		<column name="FEA" type="String"></column>
+		<column name="Civil_Engineering" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+	</entity>
+</service-builder>

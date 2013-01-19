@@ -1,0 +1,214 @@
+<script type="text/javascript">
+	var checkboxHeight = "25";
+	var radioHeight = "25";
+	var selectWidth = "190";
+
+	window.onload=function()
+	{
+		var tfrow = document.getElementById('tfhover').rows.length;
+		var tbRow=[];
+		for (var i=1;i<tfrow;i++)
+		{
+			tbRow[i]=document.getElementById('tfhover').rows[i];
+			tbRow[i].onmouseover = function()
+			{
+			this.style.backgroundColor = '#ffffff';
+			};
+			tbRow[i].onmouseout = function()
+			{
+			this.style.backgroundColor = '#d4e3e5';
+			};
+		}
+
+	document.write('<style type="text/css">input.styled { display: none; } select.styled { position: relative; width: ' + selectWidth + 'px; opacity: 0; filter: alpha(opacity=0); z-index: 5; } .disabled { opacity: 0.5; filter: alpha(opacity=50); }</style>');
+
+	var Custom = {
+	init: function() {
+	var inputs = document.getElementsByTagName("input"), span = Array(), textnode, option, active;
+	for(a = 0; a < inputs.length; a++) {
+	if((inputs[a].type == "checkbox" || inputs[a].type == "radio") && inputs[a].className == "styled") {
+	span[a] = document.createElement("span");
+	span[a].className = inputs[a].type;
+	
+		if(inputs[a].checked == true) {
+			if(inputs[a].type == "checkbox") {
+			position = "0 -" + (checkboxHeight*2) + "px";
+			span[a].style.backgroundPosition = position;
+			} else {
+			position = "0 -" + (radioHeight*2) + "px";
+			span[a].style.backgroundPosition = position;
+			}
+		}
+		inputs[a].parentNode.insertBefore(span[a], inputs[a]);
+		inputs[a].onchange = Custom.clear;
+		if(!inputs[a].getAttribute("disabled")) {
+			span[a].onmousedown = Custom.pushed;
+			span[a].onmouseup = Custom.check;
+			} else {
+			span[a].className = span[a].className += " disabled";
+			}
+	}
+	};
+inputs = document.getElementsByTagName("select");
+	for(a = 0; a < inputs.length; a++) {
+		if(inputs[a].className == "styled") {
+		option = inputs[a].getElementsByTagName("option");
+		active = option[0].childNodes[0].nodeValue;
+		textnode = document.createTextNode(active);
+		for(b = 0; b < option.length; b++) {
+			if(option[b].selected == true) {
+			textnode = document.createTextNode(option[b].childNodes[0].nodeValue);
+			}
+		}
+		span[a] = document.createElement("span");
+		span[a].className = "select";
+		span[a].id = "select" + inputs[a].name;
+		span[a].appendChild(textnode);
+		inputs[a].parentNode.insertBefore(span[a], inputs[a]);
+		if(!inputs[a].getAttribute("disabled")) {
+		inputs[a].onchange = Custom.choose;
+		} else {
+		inputs[a].previousSibling.className = inputs[a].previousSibling.className += " disabled";
+		}
+	}
+}
+document.onmouseup = Custom.clear;
+};
+pushed: function() {
+element = this.nextSibling;
+if(element.checked == true && element.type == "checkbox") {
+this.style.backgroundPosition = "0 -" + checkboxHeight*3 + "px";
+} else if(element.checked == true && element.type == "radio") {
+this.style.backgroundPosition = "0 -" + radioHeight*3 + "px";
+} else if(element.checked != true && element.type == "checkbox") {
+this.style.backgroundPosition = "0 -" + checkboxHeight + "px";
+} else {
+this.style.backgroundPosition = "0 -" + radioHeight + "px";
+}
+};
+check: function() {
+element = this.nextSibling;
+if(element.checked == true && element.type == "checkbox") {
+this.style.backgroundPosition = "0 0";
+element.checked = false;
+} else {
+if(element.type == "checkbox") {
+this.style.backgroundPosition = "0 -" + checkboxHeight*2 + "px";
+} else {
+this.style.backgroundPosition = "0 -" + radioHeight*2 + "px";
+group = this.nextSibling.name;
+inputs = document.getElementsByTagName("input");
+for(a = 0; a < inputs.length; a++) {
+if(inputs[a].name == group && inputs[a] != this.nextSibling) {
+inputs[a].previousSibling.style.backgroundPosition = "0 0";
+}
+}
+}
+element.checked = true;
+}
+};
+clear: function() {
+inputs = document.getElementsByTagName("input");
+for(var b = 0; b < inputs.length; b++) {
+if(inputs[b].type == "checkbox" && inputs[b].checked == true && inputs[b].className == "styled") {
+inputs[b].previousSibling.style.backgroundPosition = "0 -" + checkboxHeight*2 + "px";
+} else if(inputs[b].type == "checkbox" && inputs[b].className == "styled") {
+inputs[b].previousSibling.style.backgroundPosition = "0 0";
+} else if(inputs[b].type == "radio" && inputs[b].checked == true && inputs[b].className == "styled") {
+inputs[b].previousSibling.style.backgroundPosition = "0 -" + radioHeight*2 + "px";
+} else if(inputs[b].type == "radio" && inputs[b].className == "styled") {
+inputs[b].previousSibling.style.backgroundPosition = "0 0";
+}
+}
+};
+choose: function()
+{
+option = this.getElementsByTagName("option");
+for(d = 0; d < option.length; d++)
+{
+if(option[d].selected == true)
+{
+document.getElementById("select" + this.name).childNodes[0].nodeValue = option[d].childNodes[0].nodeValue;
+}
+}
+};
+}
+};
+
+
+</script>
+
+<style type="text/css">
+table.tftable
+{
+font-size:12px;
+color:#333333;
+width:100%;
+border-width: 1px;
+border-color: #729ea5;
+border-collapse: collapse;
+}
+table.tftable th
+{
+font-size:12px;
+background-color:#acc8cc;
+border-width: 1px;padding: 8px;
+border-style: solid;
+border-color: #729ea5;
+text-align:left;
+}
+table.tftable tr
+{
+background-color:#d4e3e5;	
+}
+table.tftable td
+{
+font-size:12px;
+border-width: 1px;padding: 5px;
+border-style: solid;
+border-color: #729ea5;
+}
+
+body {
+
+font: 0.8em/21px arial,sans-serif;
+}
+
+.checkbox, .radio
+{
+width: 19px;
+height: 25px;
+padding: 0 5px 0 0;
+background: url(checkbox.png) no-repeat;
+display: block;
+clear: left;
+float: left;
+}
+.radio
+{
+background: url(radio.png) no-repeat;
+}
+.select {
+position: absolute;
+width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+height: 21px;
+padding: 0 24px 0 8px;
+color: #fff;
+font: 12px/21px arial,sans-serif;
+background: url(select.png) no-repeat;
+overflow: hidden;
+}
+</style>
+<br><br>
+<table id="tfhover" class="tftable" border="1">
+<tr><th>8:00 - 9:00</th><th>9:00 - 10:00</th><th>10:00 - 11:00</th><th>11:00 - 12:00</th><th>12:00 - 1:00</th><th>1:00 - 2:00</th><th>2:00 - 3:00</th><th>3:00 - 4:00</th><th>4:00 - 5:00</th></tr>
+<tr><td>Monday</td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td><td><input type="checkbox" class="styled" disabled="disabled" /></td></tr>
+<tr><td>Tuesday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Wednesday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Thursday</td><td></td><td></td><td></td><td><td></td><td></td><td></td><td></td></td></tr>
+<tr><td>Friday</td><td></td><td></td><td></td><td><td></td><td></td><td></td><td></td></td></tr>
+<tr><td>Saturday</td><td></td><td></td><td></td><td><td></td><td></td><td></td><td></td></td></tr>
+<tr><td>Sunday</td><td></td><td></td><td></td><td><td></td><td></td><td></td><td></td></td></tr>
+</table>
+
+

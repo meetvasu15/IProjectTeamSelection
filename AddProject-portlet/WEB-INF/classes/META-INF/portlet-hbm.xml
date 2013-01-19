@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.asu.poly.iproject.teams.addProject.model.Projectdetail" />
+	<class name="com.asu.poly.iproject.teams.addProject.model.impl.ProjectdetailImpl" table="iproject_Projectdetail">
+		<cache usage="read-write" />
+		<id name="projectID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="projectTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="projectdescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sponsor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="projectrequiredskill" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

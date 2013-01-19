@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.asu.poly.iproject.student.skills.model.Skillset">
+		<field name="studentID" type="long" />
+		<field name="ASUID" type="String" />
+		<field name="Project_Management" type="String" />
+		<field name="Technical_Writing" type="String" />
+		<field name="Oral_Presentation" type="String" />
+		<field name="Thermo_Fluids" type="String" />
+		<field name="Data_Analysis" type="String" />
+		<field name="Leadership" type="String" />
+		<field name="Automation" type="String" />
+		<field name="Mechanical_Design" type="String" />
+		<field name="Fabrication_Welding" type="String" />
+		<field name="Machining_CNC" type="String" />
+		<field name="Heat_Transfer" type="String" />
+		<field name="Electronics" type="String" />
+		<field name="Microcontrollers" type="String" />
+		<field name="GUI_and_Programming" type="String" />
+		<field name="LabView" type="String" />
+		<field name="Embedded_Systems" type="String" />
+		<field name="CADD" type="String" />
+		<field name="FEA" type="String" />
+		<field name="Civil_Engineering" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+</model-hints>

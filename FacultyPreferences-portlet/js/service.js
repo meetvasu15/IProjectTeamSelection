@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.faculty", "com.asu.poly.iproject.faculty.preferences.service", "FacultyPreferences-portlet");
