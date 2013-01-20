@@ -24,6 +24,8 @@ System.out.println(ParamUtil.getLong(request, "projectID"));
 <br/>
 <aui:input type="textarea" rows="10" cols="100" name="projectdescription" label="Project Description" value="<%= project.getProjectdescription() %>"/>
 <br/>
+<aui:input type="text" size="103"  name="sponsor" label="Sponsor" value="<%= project.getSponsor() %>"/>
+<br/>
 <aui:input type="textarea" rows="4" cols="100" name="projectrequiredskill" label="Required Skillset" value="<%= project.getProjectrequiredskill() %>" />
 <br/>
 <aui:input type="text" size="100" name="contact" label="Contact" value="<%= project.getContact() %>"/>
