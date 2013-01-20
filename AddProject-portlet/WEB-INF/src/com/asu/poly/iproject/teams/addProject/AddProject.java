@@ -28,6 +28,7 @@ throws IOException, PortletException
 		
 		String projectTitle = ParamUtil.getString(actionRequest, "projectTitle");
 		String projectdescription = ParamUtil.getString(actionRequest, "projectdescription");
+		String projectsponsor = ParamUtil.getString(actionRequest, "sponsor");
 		String contact = ParamUtil.getString(actionRequest, "contact");
 		String requiredskill = ParamUtil.getString(actionRequest, "projectrequiredskill");
 		
@@ -52,6 +53,7 @@ throws IOException, PortletException
 		project.setProjectdescription(projectdescription);
 		project.setProjectrequiredskill(requiredskill);
 		project.setContact(contact);
+		project.setSponsor(projectsponsor);
 		
 		if (projectId > 0L) {
 		modifyproject(project);
