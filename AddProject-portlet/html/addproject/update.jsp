@@ -20,7 +20,7 @@ System.out.println(ParamUtil.getLong(request, "projectID"));
 
 <aui:input type="hidden" name="redirectURL" value="<%= renderResponse.createRenderURL().toString() %>"/>
 <aui:input type="hidden" name="projectId" value="<%= String.valueOf(project.getProjectID()) %>"/>
-<aui:input type="text" size="100" name="projectTitle" label="Project Title" value="<%= project.getProjectTitle() %>" />
+<aui:input type="text" size="103" name="projectTitle" label="Project Title" value="<%= project.getProjectTitle() %>" />
 <br/>
 <aui:input type="textarea" rows="10" cols="100" name="projectdescription" label="Project Description" value="<%= project.getProjectdescription() %>"/>
 <br/>
@@ -28,7 +28,7 @@ System.out.println(ParamUtil.getLong(request, "projectID"));
 <br/>
 <aui:input type="textarea" rows="4" cols="100" name="projectrequiredskill" label="Required Skillset" value="<%= project.getProjectrequiredskill() %>" />
 <br/>
-<aui:input type="text" size="100" name="contact" label="Contact" value="<%= project.getContact() %>"/>
+<aui:input type="text" size="103" name="contact" label="Contact" value="<%= project.getContact() %>"/>
 
 
 <br/>
