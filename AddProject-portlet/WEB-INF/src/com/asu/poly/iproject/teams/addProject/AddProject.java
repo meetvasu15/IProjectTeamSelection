@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
+import javax.portlet.ProcessAction;
 
 import com.asu.poly.iproject.teams.addProject.model.Projectdetail;
 import com.asu.poly.iproject.teams.addProject.model.impl.ProjectdetailImpl;
@@ -14,12 +15,13 @@ import com.liferay.counter.service.CounterLocalServiceUtil;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.util.ParamUtil;
-import com.liferay.util.bridges.mvc.MVCPortlet;
+
 
 /**
  * Portlet implementation class AddProject
  */
-public class AddProject extends MVCPortlet {
+public class AddProject {
+	@ProcessAction(name="updateproject")
 	public void updateproject(ActionRequest actionRequest,ActionResponse actionResponse)
 throws IOException, PortletException
 {
