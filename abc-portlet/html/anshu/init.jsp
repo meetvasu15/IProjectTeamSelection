@@ -12,9 +12,9 @@
 <%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
 <%@page import="com.liferay.portal.kernel.util.Validator"%>
 
-<%@page import="com.test.slayer.model.LMSBook"%>
-<%@page import="com.test.slayer.model.impl.LMSBookImpl"%>
-<%@page import="com.test.slayer.service.LMSBookLocalServiceUtil"%>
+<%@page import="com.test.slayer.model.LLLBook"%>
+<%@page import="com.test.slayer.model.impl.LLLBookImpl"%>
+<%@page import="com.test.slayer.service.LLLBookLocalServiceUtil"%>
 
 <portlet:defineObjects />
 <liferay-theme:defineObjects />
