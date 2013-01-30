@@ -28,6 +28,7 @@
 		<column name="CADD" type="String"></column>
 		<column name="FEA" type="String"></column>
 		<column name="Civil_Engineering" type="String"></column>
+		<column name="studentasuid" type="long" />
 		<!-- Audit fields -->
 		<column name="dateAdded" type="Date"></column>
 	</entity>
