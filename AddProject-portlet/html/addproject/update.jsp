@@ -1,13 +1,8 @@
 <%@ include file="/html/addproject/init.jsp" %>
-<%@page import="com.asu.poly.iproject.teams.addProject.model.impl.ProjectdetailImpl" %>
-<%@page import="com.liferay.portal.kernel.util.ParamUtil"%>
-<%@page import="com.asu.poly.iproject.teams.addProject.service.ProjectdetailLocalServiceUtil"%>
- <%@page import="com.asu.poly.iproject.teams.addProject.model.Projectdetail"%>
-
 
 <%
-PortletURL updateprojectURL = renderResponse.createActionURL();
-updateprojectURL.setParameter(ActionRequest.ACTION_NAME, "updateproject");
+/*PortletURL updateprojectURL = renderResponse.createActionURL();
+updateprojectURL.setParameter(ActionRequest.ACTION_NAME, "updateproject");*/
 
 Projectdetail project = new ProjectdetailImpl();
 long prjId = ParamUtil.getLong(request, "projectID");
@@ -15,8 +10,19 @@ if (prjId > 0L) {
 project = ProjectdetailLocalServiceUtil.getProjectdetail(prjId);
 System.out.println(ParamUtil.getLong(request, "projectID"));
 }
+String uploadProgressId = PwdGenerator.getPassword(PwdGenerator.KEY3, 4);
+PortletPreferences prefs = renderRequest.getPreferences();
 %>
-<aui:form name="fm" method="POST" action="<%= updateprojectURL.toString() %>">
+
+<portlet:actionURL var="updateprojectURL" name="updateproject">
+    <portlet:param name="jspPage" value="/update.jsp" />
+</portlet:actionURL>
+<liferay-ui:error key="projectTitle-required"
+message="Project title is required." ></liferay-ui:error>
+
+ 
+
+<aui:form name="fm" method="POST" action="<%= updateprojectURL.toString() %>" enctype="multipart/form-data">
 
 <aui:input type="hidden" name="redirectURL" value="<%= renderResponse.createRenderURL().toString() %>"/>
 <aui:input type="hidden" name="projectId" value="<%= String.valueOf(project.getProjectID()) %>"/>
@@ -24,15 +30,19 @@ System.out.println(ParamUtil.getLong(request, "projectID"));
 <br/>
 <aui:input type="textarea" rows="10" cols="100" name="projectdescription" label="Project Description" value="<%= project.getProjectdescription() %>"/>
 <br/>
-<aui:input type="text" size="103"  name="sponsor" label="Sponsor" value="<%= project.getSponsor() %>"/>
+<aui:input type="text" size="103" name="sponsor" label="Sponsor" value="<%= project.getSponsor() %>"/>
 <br/>
 <aui:input type="textarea" rows="4" cols="100" name="projectrequiredskill" label="Required Skillset" value="<%= project.getProjectrequiredskill() %>" />
 <br/>
 <aui:input type="text" size="103" name="contact" label="Contact" value="<%= project.getContact() %>"/>
-
-
 <br/>
-<aui:button type="submit" value="Submit"/>
+<aui:input type="text" name="status" label="Status" value="<%= project.getStatus() %>" />
+<br/>
+<br/>
+
+<aui:input type="text" name="link" label="Video Link (optional)" value="<%= project.getLink() %>" />
+<br/>
+<aui:button type="submit" value="Save"/>
 </aui:form>
 
 
