@@ -1,37 +1,25 @@
 <%@ include file="/html/manual/init.jsp" %>
 
+
+<h1>Create Teams</h1>
+
 <%
-PortletURL listTeamsURL = renderResponse.createRenderURL();
-listTeamsURL.setParameter("jspPage", "/html/manual/view.jsp");
+PortletURL listteamsURL = renderResponse.createRenderURL();
+listteamsURL.setParameter("jspPage", "/html/manual/list.jsp");
 %>
 
 <%
-PortletURL updateTeamsURL = renderResponse.createActionURL();
-updateTeamsURL.setParameter(
-ActionRequest.ACTION_NAME, "updateTeams");
+PortletURL assignStudentsURL = renderResponse.createRenderURL();
+assignStudentsURL.setParameter("jspPage", "/html/manual/assignStudent.jsp");
 %>
-
 
 <%
-int count = ProjectdetailLocalServiceUtil.getProjectdetailsCount();
-List<Projectdetail> projects = ProjectdetailLocalServiceUtil.getProjectdetails(0,
-count);
+PortletURL assignFacultyURL = renderResponse.createRenderURL();
+assignFacultyURL.setParameter("jspPage", "/html/manual/assignFaculty.jsp");
 %>
-<h3>Select the follwing to for  a manual team</h3>
-<form name="<portlet:namespace/>fm" method="POST" action="<%=
-updateTeamsURL.toString() %>">
-<select name="project">
-<option></option>
-<%
-for (Projectdetail project : projects) {
-%>
-<option> <%= project.getProjectTitle() %></option>
-<%
-}
-%>
-</select>
-<br ><br >
-<input type="submit" value="Submit">
+<br><br>
+<a href="<%= assignFacultyURL.toString() %>">Assign Faculty Mentors &raquo;</a><br><br>
+<a href="<%= assignStudentsURL.toString() %>">Assign Students &raquo;</a><br><br>
+<a href="<%= listteamsURL.toString() %>">Show all Teams &raquo;</a><br>
 
 
-</form>

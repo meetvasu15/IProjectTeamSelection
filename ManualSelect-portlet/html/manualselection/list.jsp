@@ -1,4 +1,4 @@
-<%@ include file="/html/manualselection/init.jsp" %>
+<%@ include file="/html/manual/init.jsp" %>
 <%@ page import="com.asu.poly.teams.manualSelect.slayer.model.Team" %>
 <%@ page import="com.asu.poly.teams.manualSelect.slayer.service.TeamLocalServiceUtil" %>
 <h1>List of teams</h1>

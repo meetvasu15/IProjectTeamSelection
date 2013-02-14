@@ -11,8 +11,6 @@
 * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
 * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
 * details.
-
-*abc
 */
 --%>
 
@@ -20,4 +18,4 @@
 
 <portlet:defineObjects />
 
-This is the <b>Manual Selection</b> portlet in Edit mode.
+This is the <b>Manual</b> portlet in Edit mode.
