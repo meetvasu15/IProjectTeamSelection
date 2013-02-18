@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.poly.asu.student.model.studentgeninfo">
+		<field name="studentgeninfoid" type="long" />
+		<field name="name" type="String" />
+		<field name="asuid" type="long" />
+		<field name="department" type="String" />
+		<field name="level" type="long" />
+		<field name="cummulativegpa" type="float" />
+		<field name="loggedinuserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>

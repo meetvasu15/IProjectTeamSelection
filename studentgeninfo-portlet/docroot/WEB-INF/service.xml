@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="com.poly.asu.student">
+	<author>Shruthi</author>
+	<namespace>Studentgeninfo</namespace>
+
+	<entity name="studentgeninfo" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="studentgeninfoid" type="long" primary="true" />
+		
+		<column name="name" type="String" />
+		<column name="asuid" type="long" />
+		<column name="department" type="String" />
+		<column name="level" type="long" />
+		<column name="cummulativegpa" type="float" />
+
+		<!-- Audit fields -->
+
+		
+		<column name="loggedinuserId" type="long" />		
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<!-- Other fields -->
+
+		
+
+		<!-- Order -->
+
+		<!-- order by="asc">
+			<order-column name="field1" />
+		</order-->
+
+		<!-- Finder methods -->
+
+		<!-- finder name="Field2" return-type="Collection">
+			<finder-column name="field2" />
+		</finder -->
+	</entity>
+</service-builder>

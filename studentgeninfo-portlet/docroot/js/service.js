@@ -1,0 +1,1 @@
+Liferay.Service.register("Liferay.Service.Studentgeninfo", "com.poly.asu.student.service", "studentgeninfo-portlet");

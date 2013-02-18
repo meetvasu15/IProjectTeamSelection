@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.poly.asu.student.service.studentgeninfoLocalService" class="com.poly.asu.student.service.impl.studentgeninfoLocalServiceImpl" />
+	<bean id="com.poly.asu.student.service.studentgeninfoService" class="com.poly.asu.student.service.impl.studentgeninfoServiceImpl" />
+	<bean id="com.poly.asu.student.service.persistence.studentgeninfoPersistence" class="com.poly.asu.student.service.persistence.studentgeninfoPersistenceImpl" parent="basePersistence" />
+</beans>

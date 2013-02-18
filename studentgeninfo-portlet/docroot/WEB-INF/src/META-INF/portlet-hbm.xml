@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.poly.asu.student.model.studentgeninfo" />
+	<class name="com.poly.asu.student.model.impl.studentgeninfoImpl" table="Studentgeninfo_studentgeninfo">
+		<cache usage="read-write" />
+		<id name="studentgeninfoid" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="asuid" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="department" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="level" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="cummulativegpa" type="com.liferay.portal.dao.orm.hibernate.FloatType" />
+		<property name="loggedinuserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>
