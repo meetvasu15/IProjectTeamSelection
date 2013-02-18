@@ -2,10 +2,10 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
 <service-builder
 	package-path="com.asu.poly.iproject.student.preferences">
-	<author>asingh64</author>
+	<author>Eshwari</author>
 	<namespace>student</namespace>
 
-		<entity name="Projectdetail" local-service="true" remote-service="true" table="iproject_projectdetail">
+	<entity name="Projectdetail" local-service="true" remote-service="true" table="iproject_projectdetail">
                 <!-- PK fields -->
                 <column name="projectID" type="long" primary="true" />
 
@@ -27,6 +27,8 @@
                 <column name="preference3" type="String" />
                 <column name="preference4" type="String" />
                 <column name="preference5" type="String" />
+                <column name="focusarea" type="String" />
+                <column name="reasons" type="String" />
                
                 <!-- Audit fields -->
                 <column name="dateAdded" type="Date" />

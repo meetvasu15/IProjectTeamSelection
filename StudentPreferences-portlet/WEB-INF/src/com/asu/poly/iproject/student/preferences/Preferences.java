@@ -28,6 +28,8 @@ public class Preferences extends MVCPortlet {
 		String preference3 = ParamUtil.getString(actionRequest, "preference3");
 		String preference4 = ParamUtil.getString(actionRequest, "preference4");
 		String preference5 = ParamUtil.getString(actionRequest, "preference5");
+		String focusarea = ParamUtil.getString(actionRequest, "focusarea");
+		String reasons = ParamUtil.getString(actionRequest, "reasons");
 		
 		
 		preferencesImpl preference = new preferencesImpl();
@@ -45,6 +47,8 @@ public class Preferences extends MVCPortlet {
 		preference.setPreference3(preference3);
 		preference.setPreference4(preference4);
 		preference.setPreference5(preference5);
+		preference.setfocusarea(focusarea);
+		preference.setreasons(reasons);
 		
 		preference.setDateAdded(new Date());
 		preference.setDateModified(new Date());
