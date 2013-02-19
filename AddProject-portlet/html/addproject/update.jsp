@@ -42,7 +42,16 @@ message="Project title is required." ></liferay-ui:error>
 
 <aui:input type="text" name="link" label="Video Link (optional)" value="<%= project.getLink() %>" />
 <br/>
-<aui:button type="submit" value="Save"/>
+
+<!--need to add this for required skillsets
+<aui:input type="checkbox" name="CS" label="CS" />
+
+<br/><a href="<%= requiredskillsetURL %>">Next &raquo;</a>
+<br/>
+<br/>
+<br/>
+
+<!--aui:button type="submit" value="Save"/-->
 </aui:form>
 
 
