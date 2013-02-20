@@ -21,11 +21,6 @@ PortletPreferences prefs = renderRequest.getPreferences();
 <liferay-ui:error key="projectTitle-required"
 message="Project title is required." ></liferay-ui:error>
 
-<liferay-ui:error key="Cant delete"
-message="Can't delete once started" ></liferay-ui:error>
-
- 
-
 <aui:form name="fm" method="POST" action="<%= updateprojectURL.toString() %>" enctype="multipart/form-data">
 
 <aui:input type="hidden" name="redirectURL" value="<%= renderResponse.createRenderURL().toString() %>"/>
