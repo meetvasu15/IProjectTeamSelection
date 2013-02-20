@@ -40,10 +40,10 @@ message="Project title is required." ></liferay-ui:error>
 <aui:label>Status </aui:label>
     	<aui:div>
 		<aui:select class="element select medium" id="element_1" name="element_1"> 
-<option value="1" >Not Started</option>
-<option value="2" >In Progress</option>
-<option value="3" >Finished</option>
-<option value="4" >Scrapped</option>
+<aui:option value="1" >Not Started</aui:option>
+<aui:option value="2" >In Progress</aui:option>
+<aui:option value="3" >Finished</aui:option>
+<aui:option value="4" >Scrapped</aui:option>
 	</aui:select>
 	</aui:div> 
 <br/>
