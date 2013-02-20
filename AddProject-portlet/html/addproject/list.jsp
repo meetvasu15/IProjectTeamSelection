@@ -5,6 +5,7 @@
 <%
 int count = ProjectdetailLocalServiceUtil.getProjectdetailsCount();
 List<Projectdetail> projects = ProjectdetailLocalServiceUtil.getProjectdetails(0, count);
+
 %>
 
 <%
@@ -20,7 +21,8 @@ editProjectURL.setParameter("jspPage", "/html/addproject/update.jsp");
 %>
 
 
-
+<liferay-ui:error key="Cant delete"
+message="Can't delete once started" ></liferay-ui:error>
 
 
 <table border="1" width="90%" >
