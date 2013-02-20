@@ -45,7 +45,6 @@ message="Can't delete once started" ></liferay-ui:error>
 <aui:option value="Finished">Finished</aui:option>
 <aui:option value="Scrapped">Scrapped</aui:option>
 	</aui:select>
-	</aui:div> 
 <br/>
 <br/>
 
