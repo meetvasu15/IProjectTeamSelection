@@ -40,10 +40,10 @@ message="Can't delete once started" ></liferay-ui:error>
 <aui:input type="text" size="103" name="contact" label="Contact" value="<%= project.getContact() %>"/>
 <br/>
 <aui:select name="status" label="Status" value="<%= project.getStatus() %>" >		
-<aui:option value="Not Started"</aui:option>
-<aui:option value="In Progress"</aui:option>
-<aui:option value="Finished"</aui:option>
-<aui:option value="Scrapped"</aui:option>
+<aui:option value="Not Started">Not Started</aui:option>
+<aui:option value="In Progress">In Progress</aui:option>
+<aui:option value="Finished">Finished</aui:option>
+<aui:option value="Scrapped">Scrapped</aui:option>
 	</aui:select>
 	</aui:div> 
 <br/>
