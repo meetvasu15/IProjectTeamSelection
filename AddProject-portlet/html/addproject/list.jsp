@@ -33,6 +33,7 @@ editProjectURL.setParameter("jspPage", "/html/addproject/update.jsp");
 <th align="center">Contact</th>
 <th align="center"> Delete </th>
 <th align="center"> Edit </th>
+<th align="center"> Status </th>
 </tr>
 <%
 for (Projectdetail project : projects) {
@@ -44,6 +45,7 @@ for (Projectdetail project : projects) {
 <td><%= project.getSponsor() %></td>
 <td><%= project.getProjectrequiredskill() %> </td>
 <td><%= project.getContact() %></td>
+<td><%= project.getStatus() %></td>
 <% deleteProjectURL.setParameter("projectID", String.valueOf(project.getProjectID())); %>
 <td>
 <a href="<%= deleteProjectURL.toString() %>">Delete &raquo;</a>
