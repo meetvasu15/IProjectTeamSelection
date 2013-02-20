@@ -148,7 +148,7 @@ public class AddProject extends MVCPortlet {
 		            	Projectdetail project = ProjectdetailLocalServiceUtil.getProjectdetail(projectId);
 		            	String status = project.getStatus();
                                 System.out.println("status = "+ status);
-                                if(status == null || status == "Scrapped" || status == "In Progress" || status == "Finished"){
+                                if(status == "Scrapped" || status == "In Progress" || status == "Finished"){
                                 SessionErrors.add(actionRequest, "Cant Delete");
                                  }	
 		             ProjectdetailLocalServiceUtil.deleteProjectdetail(projectId);
