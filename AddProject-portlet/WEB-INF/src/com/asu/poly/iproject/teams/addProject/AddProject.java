@@ -133,15 +133,24 @@ public class AddProject extends MVCPortlet {
 		    {
 		
 		    long projectId = ParamUtil.getLong(actionRequest, "projectID");
-		    String status = ParamUtil.getString(actionRequest, "status");
+		    
+		   		    
+		   /*String status = ParamUtil.getString(actionRequest, "status");
 		    //int st = integer.ParseInt(status);
 		    //if(st == 2 || status == 3 || status == 4){
 				//SessionErrors.add(actionRequest, "Cant Delete");
 		    if(status == "In Progress" || status == "Finished" || status == "Scrapped")
 		    		SessionErrors.add(actionRequest, "Cant Delete");
+		    */
 		   
 		    if (projectId > 0L) {
 		            try {
+		            	Projectdetail project = ProjectdetailLocalServiceUtil.getProjectdetail(projectId);
+		            	String status = project.getStatus();
+                                System.out.println("status = "+ status);
+                                if(status == null || status == "Scrapped" || status == "In Progress" || status == "Finished"){
+                                SessionErrors.add(actionRequest, "Cant Delete");
+                                 }	
 		             ProjectdetailLocalServiceUtil.deleteProjectdetail(projectId);
 		             
 		            } catch (PortalException e) {
