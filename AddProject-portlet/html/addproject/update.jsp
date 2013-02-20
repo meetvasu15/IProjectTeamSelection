@@ -37,6 +37,16 @@ message="Project title is required." ></liferay-ui:error>
 <aui:input type="text" size="103" name="contact" label="Contact" value="<%= project.getContact() %>"/>
 <br/>
 <aui:input type="text" name="status" label="Status" value="<%= project.getStatus() %>" />
+<label class="description" for="element_1">Status </label>
+    	<div>
+		<select class="element select medium" id="element_1" name="element_1"> 
+<option value="1" >Not Started</option>
+<option value="2" >In Progress</option>
+<option value="3" >Finished</option>
+<option value="4" >Scrapped</option>
+
+		</select>
+		</div> 
 <br/>
 <br/>
 
