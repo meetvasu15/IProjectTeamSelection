@@ -135,7 +135,7 @@ public class AddProject extends MVCPortlet {
 		    long projectId = ParamUtil.getLong(actionRequest, "projectID");
 		    String status = ParamUtil.getString(actionRequest, "status");
 		    if(status == null || status == "Scrapped" || status == "In Progress" || status == "Finished"){
-				SessionErrors.add(actionRequest, "Can't be deleted once a project has ben started");
+				SessionErrors.add(actionRequest, "Cant Delete");
 		   
 		    if (projectId > 0L) {
 		            try {
