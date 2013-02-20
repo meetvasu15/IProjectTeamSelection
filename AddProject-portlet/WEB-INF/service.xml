@@ -13,6 +13,7 @@
 		<column name="sponsor" type="String"></column>
 		<column name="projectrequiredskill" type="String"></column>
 		<column name="contact" type="String"></column>
+		<column name="status" type="String"></column>
 		<!-- Audit fields -->
 		<column name="dateAdded" type="Date"></column>
 		<column name="dateModified" type="Date"></column>
