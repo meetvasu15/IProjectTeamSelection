@@ -55,6 +55,7 @@ public class RandomCreation extends MVCPortlet {
 				for (int i = 0; i<=Integer.parseInt(ctr); i++){
 					int choice = rand.nextInt(students.size());
 					stud = students.get(choice).getAsuid();
+					students.remove(choice); // removing from the list to avoid duplicate assignment
 					switch(i){
 					case 0:
 						team.setStudent0(stud);
