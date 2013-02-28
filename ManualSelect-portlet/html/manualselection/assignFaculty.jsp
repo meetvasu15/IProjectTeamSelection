@@ -47,6 +47,7 @@ updateTeamsURL.toString() %>">
 	</tr>
 	<%
 		}
+		
 	%>
 </table>
 <br ><br >

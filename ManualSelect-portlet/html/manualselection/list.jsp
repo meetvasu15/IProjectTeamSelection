@@ -11,7 +11,9 @@ List<Team> teams = TeamLocalServiceUtil.getTeams(0, count);
 <tr>
 <th align="center"> teamID </th>
 <th align="center">Project Title</th>
-<th align="center">Faculty</th>
+<th align="center">Faculty1</th>
+<th align="center">Faculty2</th>
+<th align="center">Faculty3</th>
 <th align="center">Student 1</th>
 <th align="center">Student 2</th>
 <th align="center">Student 3</th>
@@ -29,6 +31,8 @@ for (Team team : teams) {
 <td><%= team.getTeamID() %></td>
 <td><%= team.getProjectTitle() %></td>
 <td><%= team.getFaculty1() %></td>
+<td><%= team.getFaculty2() %></td>
+<td><%= team.getFaculty3() %></td>
 <td><%= team.getStudent1() %> </td>
 <td><%= team.getStudent2() %> </td>
 <td><%= team.getStudent3() %> </td>
