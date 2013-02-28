@@ -8,5 +8,8 @@
 <%@page import="javax.portlet.ActionRequest"%>
 <%@page import="com.asu.poly.iproject.student.preferences.model.Projectdetail" %>
 <%@page import="com.asu.poly.iproject.student.preferences.service.ProjectdetailLocalServiceUtil" %>
+<%@ page import="com.asu.poly.iproject.student.preferences.model.FocusArea" %>
+<%@ page import="com.asu.poly.iproject.student.preferences.service.FocusAreaLocalServiceUtil" %>
+
 
 <portlet:defineObjects />

@@ -16,6 +16,16 @@
                 <column name="dateAdded" type="Date" />
                  <column name="dateModified" type="Date" />
         </entity>
+		<entity name="FocusArea" local-service="true" remote-service="true" table="focus_area">
+        <!-- PK feilds -->
+        
+        <column name= "area_ID" type="long" primary="true"  />
+        
+        <!-- UI feilds--> 
+        
+        <column name= "focusarea" type="String" />
+            
+        </entity>
         <entity name="preferences" local-service="true" remote-service="true" >
                 <!-- PK fields -->
                 <column name="studentID" type="long" primary="true" />

@@ -84,12 +84,17 @@ for (Projectdetail project : projects) {
 </select>
 
 <br><br>
-<h4>Enter your focus areas:</h4> <br>
-
-<textarea name="focusarea" rows="3" cols="60"></textarea>
-
-<p>
-<br ><br >
+Focus Area:</p>
+<select name="focusarea">
+<option></option>
+<%
+for (FocusArea area : area) {
+%>
+<option> <%= area.getFocusArea() %></option>
+<%
+}
+%>
+</select>
 <h4>Reasons for choosing the above projects:</h4> <br>
 
 <textarea name="reasons" rows="5" cols="60"></textarea>
