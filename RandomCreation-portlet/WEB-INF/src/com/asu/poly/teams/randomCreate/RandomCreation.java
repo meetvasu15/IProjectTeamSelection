@@ -9,10 +9,8 @@ import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;
 import javax.portlet.PortletException;
 
-import com.asu.poly.teams.randomCreate.slayer.model.Faculty;
 import com.asu.poly.teams.randomCreate.slayer.model.Student;
 import com.asu.poly.teams.randomCreate.slayer.model.impl.TeamImpl;
-import com.asu.poly.teams.randomCreate.slayer.service.FacultyLocalServiceUtil;
 import com.asu.poly.teams.randomCreate.slayer.service.StudentLocalServiceUtil;
 import com.asu.poly.teams.randomCreate.slayer.service.TeamLocalServiceUtil;
 import com.liferay.counter.service.CounterLocalServiceUtil;
@@ -29,8 +27,7 @@ public class RandomCreation extends MVCPortlet {
 			throws IOException, PortletException {
 			String project = ParamUtil.getString(actionRequest, "project");
 			String ctr =  ParamUtil.getString(actionRequest, "numofStudents");
-			int studentCount, facultyCount;
-			List<Faculty> faculty;
+			int studentCount;
 			List<Student> students;
 			Random rand = new Random();
 			TeamImpl team = new TeamImpl();
@@ -47,11 +44,9 @@ public class RandomCreation extends MVCPortlet {
 			try {
 				studentCount = StudentLocalServiceUtil.getStudentsCount();
 				students = StudentLocalServiceUtil.getStudents(0,	studentCount);
-				facultyCount = FacultyLocalServiceUtil.getFacultiesCount();
-				faculty = FacultyLocalServiceUtil.getFaculties(0,	facultyCount);
-				String fac= (faculty.get(rand.nextInt(faculty.size()))).getAsuid();
+				
 				StringBuilder stud;
-				team.setFaculty0(fac);
+			
 				for (int i = 0; i<=Integer.parseInt(ctr); i++){
 					int choice = rand.nextInt(students.size());
 					stud = students.get(choice).getAsuid();
