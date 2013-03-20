@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.asu.poly.teams.manualSelect.slayer.model.Faculty">
+		<field name="facultyID" type="long" />
+		<field name="asuid" type="String" />
+		<field name="facultyName" type="String" />
+		<field name="facultyDept" type="String" />
+		<field name="contact" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+	<model name="com.asu.poly.teams.manualSelect.slayer.model.preferences">
+		<field name="facultyID" type="long" />
+		<field name="ASUID" type="String" />
+		<field name="preference1" type="String" />
+		<field name="preference2" type="String" />
+		<field name="preference3" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+	<model name="com.asu.poly.teams.manualSelect.slayer.model.Projectdetail">
+		<field name="projectID" type="long" />
+		<field name="projectTitle" type="String" />
+		<field name="projectdescription" type="String" />
+		<field name="sponsor" type="String" />
+		<field name="projectrequiredskill" type="String" />
+		<field name="contact" type="String" />
+		<field name="status" type="String" />
+		<field name="link" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+	<model name="com.asu.poly.teams.manualSelect.slayer.model.Skillset">
+		<field name="studentID" type="long" />
+		<field name="asuid" type="String" />
+		<field name="Project_Management" type="String" />
+		<field name="Technical_Writing" type="String" />
+		<field name="Oral_Presentation" type="String" />
+		<field name="Thermo_Fluids" type="String" />
+		<field name="Data_Analysis" type="String" />
+		<field name="Leadership" type="String" />
+		<field name="Automation" type="String" />
+		<field name="Mechanical_Design" type="String" />
+		<field name="Fabrication_Welding" type="String" />
+		<field name="Machining_CNC" type="String" />
+		<field name="Heat_Transfer" type="String" />
+		<field name="Electronics" type="String" />
+		<field name="Microcontrollers" type="String" />
+		<field name="GUI_and_Programming" type="String" />
+		<field name="LabView" type="String" />
+		<field name="Embedded_Systems" type="String" />
+		<field name="CADD" type="String" />
+		<field name="FEA" type="String" />
+		<field name="Civil_Engineering" type="String" />
+		<field name="dateAdded" type="Date" />
+	</model>
+	<model name="com.asu.poly.teams.manualSelect.slayer.model.Student">
+		<field name="studentID" type="long" />
+		<field name="asuid" type="String" />
+		<field name="studentName" type="String" />
+		<field name="level" type="String" />
+		<field name="course" type="String" />
+		<field name="gpa" type="String" />
+		<field name="sex" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+	<model name="com.asu.poly.teams.manualSelect.slayer.model.Team">
+		<field name="teamID" type="long" />
+		<field name="projectTitle" type="String" />
+		<field name="faculty1" type="String" />
+		<field name="faculty2" type="String" />
+		<field name="faculty3" type="String" />
+		<field name="faculty4" type="String" />
+		<field name="student0" type="String" />
+		<field name="student1" type="String" />
+		<field name="student2" type="String" />
+		<field name="student3" type="String" />
+		<field name="student4" type="String" />
+		<field name="student5" type="String" />
+		<field name="student6" type="String" />
+		<field name="student7" type="String" />
+		<field name="student8" type="String" />
+		<field name="student9" type="String" />
+		<field name="dateAdded" type="Date" />
+		<field name="dateModified" type="Date" />
+	</model>
+</model-hints>

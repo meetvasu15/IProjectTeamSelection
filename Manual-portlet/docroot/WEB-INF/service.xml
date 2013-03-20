@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder
+	package-path="com.asu.poly.teams.manualSelect.slayer">
+	<author>Eshwari</author>
+	<namespace>manualSelect</namespace>
+
+<entity name="Team" local-service="true" remote-service="true" table="TeamDetails">
+                <!-- PK fields -->
+                <column name="teamID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="projectTitle" type="String" />
+                <column name="faculty1" type="String" />
+                <column name="faculty2" type="String" />
+                <column name="faculty3" type="String" />
+                 <column name="faculty4" type="String" />
+                 
+                <column name="student0" type="String" />
+                <column name="student1" type="String" />
+                <column name="student2" type="String" />
+                <column name="student3" type="String" />
+                 <column name="student4" type="String" />
+                <column name="student5" type="String" />
+                <column name="student6" type="String" />
+                <column name="student7" type="String" />
+                 <column name="student8" type="String" />
+                <column name="student9" type="String" />
+                
+                
+               
+                
+
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+<entity name="Faculty" local-service="true" remote-service="true" table="faculty">
+                <!-- PK fields -->
+                <column name="facultyID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="asuid" type="String" />
+                <column name="facultyName" type="String" />
+                <column name="facultyDept" type="String" />
+                <column name="contact" type="String" />
+
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+        <entity name="Student" local-service="true" remote-service="true" table="student">
+                <!-- PK fields -->
+                <column name="studentID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="asuid" type="String" />
+                <column name="studentName" type="String" />
+                <column name="level" type="String" />
+                <column name="course" type="String" />
+                 <column name="gpa" type="String" />
+                 <column name="sex" type="String" />
+
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+        
+	<entity name="Projectdetail" local-service="true" remote-service="true" table="project_projectdetail">
+                <!-- PK fields -->
+                <column name="projectID" type="long" primary="true"></column>
+		<!-- UI fields -->
+		<column name="projectTitle" type="String"></column>
+		<column name="projectdescription" type="String"></column>
+		<column name="sponsor" type="String"></column>
+		<column name="projectrequiredskill" type="String"></column>
+		<column name="contact" type="String"></column>
+		<column name="status" type="String"></column>
+		<column name="link" type="String"></column>
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date"></column>
+		<column name="dateModified" type="Date"></column>
+        </entity>
+        <entity name="Skillset" local-service="true" remote-service="true" table="student_skillset">
+		<!-- PK fields -->
+		<column name="studentID" type="long" primary="true" />
+
+		<!-- UI fields -->
+		 <column name="asuid" type="String" />
+		<column name="Project_Management" type="String" />
+		<column name="Technical_Writing" type="String" />
+		<column name="Oral_Presentation" type="String" />
+		<column name="Thermo_Fluids" type="String" />
+		<column name="Data_Analysis" type="String" />
+		<column name="Leadership" type="String" />
+		<column name="Automation" type="String" />
+		<column name="Mechanical_Design" type="String" />
+		<column name="Fabrication_Welding" type="String" />
+		<column name="Machining_CNC" type="String" />
+		<column name="Heat_Transfer" type="String" />
+		<column name="Electronics" type="String" />
+		<column name="Microcontrollers" type="String" />
+		<column name="GUI_and_Programming" type="String" />
+		<column name="LabView" type="String" />
+		<column name="Embedded_Systems" type="String" />
+		<column name="CADD" type="String" />
+		<column name="FEA" type="String" />
+		<column name="Civil_Engineering" type="String" />
+
+		<!-- Audit fields -->
+		<column name="dateAdded" type="Date" />
+		
+		
+
+	</entity>
+	
+	<entity name="preferences" local-service="true" remote-service="true" >
+                <!-- PK fields -->
+                <column name="studentID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="ASUID" type="String" />
+                <column name="preference1" type="String" />
+                <column name="preference2" type="String" />
+                <column name="preference3" type="String" />
+                <column name="preference4" type="String" />
+                <column name="preference5" type="String" />               
+                <column name="studentasuid" type="long" />
+                
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+        <entity name="preferences" local-service="true" remote-service="true" >
+                <!-- PK fields -->
+                <column name="facultyID" type="long" primary="true" />
+
+                <!-- UI fields -->
+                <column name="ASUID" type="String" />
+                <column name="preference1" type="String" />
+                <column name="preference2" type="String" />
+                <column name="preference3" type="String" />
+              
+               
+                <!-- Audit fields -->
+                <column name="dateAdded" type="Date" />
+                 <column name="dateModified" type="Date" />
+        </entity>
+</service-builder>

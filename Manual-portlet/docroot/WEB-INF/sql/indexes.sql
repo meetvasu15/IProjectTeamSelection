@@ -1,0 +1,1 @@
+create index IX_B64659BB on manualSelect_Foo (field2);

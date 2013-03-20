@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.asu.poly.teams.manualSelect.slayer.model.Faculty" />
+	<import class="com.asu.poly.teams.manualSelect.slayer.model.preferences" />
+	<import class="com.asu.poly.teams.manualSelect.slayer.model.Projectdetail" />
+	<import class="com.asu.poly.teams.manualSelect.slayer.model.Skillset" />
+	<import class="com.asu.poly.teams.manualSelect.slayer.model.Student" />
+	<import class="com.asu.poly.teams.manualSelect.slayer.model.Team" />
+	<class name="com.asu.poly.teams.manualSelect.slayer.model.impl.FacultyImpl" table="faculty">
+		<cache usage="read-write" />
+		<id name="facultyID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="asuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="facultyName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="facultyDept" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.teams.manualSelect.slayer.model.impl.preferencesImpl" table="manualSelect_preferences">
+		<cache usage="read-write" />
+		<id name="facultyID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="ASUID" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="preference3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.teams.manualSelect.slayer.model.impl.ProjectdetailImpl" table="project_projectdetail">
+		<cache usage="read-write" />
+		<id name="projectID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="projectTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="projectdescription" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sponsor" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="projectrequiredskill" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contact" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="link" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.teams.manualSelect.slayer.model.impl.SkillsetImpl" table="student_skillset">
+		<cache usage="read-write" />
+		<id name="studentID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="asuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Project_Management" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Technical_Writing" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Oral_Presentation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Thermo_Fluids" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Data_Analysis" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Leadership" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Automation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Mechanical_Design" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Fabrication_Welding" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Machining_CNC" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Heat_Transfer" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Electronics" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Microcontrollers" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="GUI_and_Programming" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="LabView" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Embedded_Systems" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="CADD" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="FEA" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="Civil_Engineering" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.teams.manualSelect.slayer.model.impl.StudentImpl" table="student">
+		<cache usage="read-write" />
+		<id name="studentID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="asuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="studentName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="level" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="course" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="gpa" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="sex" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.asu.poly.teams.manualSelect.slayer.model.impl.TeamImpl" table="TeamDetails">
+		<cache usage="read-write" />
+		<id name="teamID" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="projectTitle" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="faculty1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="faculty2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="faculty3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="faculty4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student0" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student4" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student5" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student6" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student7" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student8" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="student9" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateAdded" type="org.hibernate.type.TimestampType" />
+		<property name="dateModified" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>
